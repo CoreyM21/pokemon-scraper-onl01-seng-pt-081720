@@ -4,10 +4,10 @@ class Pokemon
   attr_reader :id 
   
   def initialize(id: , name: , type: , db: )
-   @id = id
-   @name = name
-   @type = type
-   @db = db
+    @id = id
+    @name = name
+    @type = type
+    @db = db
   end
   
   def self.save(name, type, db)
@@ -27,5 +27,4 @@ class Pokemon
     result = db.execute(sql, [id]).flatten
     Pokemon.new(id: result[0], name: result[1], type: result[2], db: db)
   end
-  
 end
